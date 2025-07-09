@@ -1,6 +1,6 @@
 const { default: mongoose } = require("mongoose");
 
-mongoose.connect('mongodb+srv://aparnamolks:aparna123@todo-app.4yjmmxo.mongodb.net/Blog-app')
+mongoose.connect('DB_URL')
 
 const UserSchema = new mongoose.Schema({
     username: String,
