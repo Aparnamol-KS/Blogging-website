@@ -7,6 +7,7 @@ import Blogs from "./components/blogs";
 import CreateBlog from "./components/createBlog";
 import IndividualBlog from "./components/individual_blog";
 import Landing from "./components/landingPage";
+import YourBlogs from "./components/yourBlogs";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <Route path="/blogs" element={<Blogs />} />
       <Route path="/createBlog" element={<CreateBlog />} />
       <Route path="/blogs/:blogId" element={<IndividualBlog />} />
+      <Route path="/yourBlogs" element={<YourBlogs />} />
       <Route path="/" element={<Landing />} />
     </Routes>
 

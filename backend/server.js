@@ -154,7 +154,30 @@ app.get('/blogs/:id',authMiddleware,function(req,res){
 
 })
 
-
+app.get('/your_blogs',authMiddleware,function(req,res){
+    let username = req.username;
+    UserModel.findOne({
+        username : username
+    }).then(function(user){
+        if(!user){
+            return res.status(403).json({
+                message:"user not found"
+            })
+        }else{
+            BlogsModel.find({
+                userId: user._id
+            }).then(function(blogs){
+                if(!blogs){
+                    res.status(403).json({
+                        message:"Blog couldn't find!"
+                    })
+                }else{
+                    res.send(blogs);
+                }
+            })
+        }
+    })
+})
 
 
 
